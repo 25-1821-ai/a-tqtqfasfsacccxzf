@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 해석 순서</title>
+    <style>
+        table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>출석부<div id="clock"></div>
+    </h1>
+
+    <table>
+        <colgroup>
+            <col style="width: 100px;">
+        </colgroup>
+        <tr>
+            <td>No</td>
+            <td>이름</td>
+        </tr>
+        <script>
+            let name = prompt("이름을 입력하세요:");
+            for (let marisa = 1; marisa <= 14; marisa++) {
+                document.write("<tr><td>" + marisa + "</td><td id='names" + marisa + "'></td></tr>");
+            }
+            let secondCell = document.getElementById("names5");
+            secondCell.innerText = name;
+        </script>
+
+        <script>
+            let reimu = 1; // 숫자
+            console.log("reimu ============================ ");
+            console.log(typeof reimu);
+
+            let hakurei = "1"; // 문자
+            console.log("hakurei ============================ ");
+            console.log(typeof hakurei);
+        </script>
+
+        <script>
+            function showTime() {
+                let now = new Date();
+                let display = now.toLocaleTimeString();
+                document.getElementById("clock").innerHTML = "노움씨 가버려잇!!!!!! " + display;
+            }
+
+            setInterval(showTime, 1000);
+        </script>
+
+</body>
+
+</html>
